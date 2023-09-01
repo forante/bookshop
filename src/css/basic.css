@@ -1,0 +1,16 @@
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #5C6A79;
+}
+
+.container {
+  max-width: 1160px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
