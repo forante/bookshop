@@ -1,5 +1,8 @@
 .header {
   background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 
   .header__row {
     display: flex;
@@ -7,7 +10,11 @@
     align-items: center;
     height: 116px;  
     
-    .header__burger span{
+    .header__burger { 
+      display: none;
+      
+      & span{
+
       @media (max-width:819px) {
         display: block;
         width: 18px;
@@ -17,7 +24,8 @@
         border-radius: 5px;
       }
     }
-      
+  }
+
     .navbar {
       @media (max-width:819px) {
         display: none;
@@ -47,15 +55,4 @@
       gap: 40px;
     }
   }
-}
-
-
-
-.iconsbar__user {
-}
-.iconsbar__search {
-}
-.iconsbar__cart {
-}
-.header__burger {
 }

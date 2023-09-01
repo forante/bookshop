@@ -1,11 +1,17 @@
 .header {
   background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 .header .header__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 116px;
+}
+.header .header__row .header__burger {
+  display: none;
 }
 @media (max-width: 819px) {
   .header .header__row .header__burger span {
