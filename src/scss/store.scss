@@ -1,0 +1,176 @@
+.store {
+  margin-bottom: 75px;
+
+  .store__row {
+    display: flex;
+    gap: 80px;
+    position: relative;
+    margin-bottom: 85px;
+  
+    @media (max-width: 1178px){
+      flex-direction: column;  
+    }
+
+    .categories {
+
+      @media (max-width: 1178px) {
+        display: flex;
+        gap: 15px;
+        overflow-x: scroll;
+        background-color: #EFEEF6;
+      }
+
+      .categories__item {
+        font-size: 12px;
+        font-weight: 500;
+        color: #5C6A79;
+        line-height: normal;
+        text-transform: capitalize;
+        margin-bottom: 23px;
+        transition: transform 0.3s;
+
+        @media (max-width: 1178px){
+          flex: 1 0 auto;
+        }
+
+        &.active {
+          font-size: 16px;
+          font-weight: 700;
+          color: #1C2A39;
+          position: relative;
+
+          &:before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            background-color: #756AD3;
+            position: absolute;
+            left: -15px;
+            top: 6px;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .categories__bg{
+      position: absolute;
+      width: 416px;
+      height: 720px;
+      background-color: #EFEEF6;
+      left: -175px;
+      top: -45px;
+      z-index: -1;
+
+      @media (max-width: 1178px) {
+        display: none;
+      }
+    }
+
+    .books {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 96px;
+
+      @media (max-width: 900px) {
+        justify-content: center;
+        row-gap: 70px;
+      }
+
+      @media (max-width: 450px) {
+        row-gap: 0;
+      }
+      
+      .book__img {
+
+        @media (max-width: 450px) {
+          transform: scale(0.75); 
+      }
+    }
+
+      .book {
+        display: flex;
+        justify-content: space-between;
+        width: 424px;
+
+        .book__info {
+          padding: 36px 0;
+          max-width: 176px;
+        
+          .book__autor {
+            font-family: Open+Sans, sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            margin-bottom: 4px;
+          }
+
+          .book__title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #1C2A39;
+          }
+
+          .book__rating {
+            font-family: Open+Sans, sans-serif;
+            font-weight: 400;
+            margin-bottom: 16px;
+          }
+          
+          .book__subtitle {
+            font-family: Open+Sans, sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            margin-bottom: 16px;
+          }
+
+          .book__price {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1C2A39;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+          }
+        }
+      }  
+    }
+    
+  }
+
+  .book__button {
+    color: #4C3DB2;
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 18px 67px;
+    border: 1px solid #4C3DB2;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #4C3DB2;
+      color: white;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
