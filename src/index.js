@@ -1,4 +1,4 @@
-import { slider } from "./modules/slider";
+import app from "./modules/app";
 import "./scss/main.scss";
 
-slider();
+app();

@@ -1,5 +1,5 @@
 let slider = () => {
-  const namesArr = document.querySelectorAll(".slider__img");
+  const imagesArr = document.querySelectorAll(".slider__img");
   const numArr = document.querySelectorAll(".slider__nav-num");
 
   let count = 0;
@@ -12,7 +12,7 @@ let slider = () => {
   });
 
   function changeSlide() {
-    addActiveClass(namesArr);
+    addActiveClass(imagesArr);
     addActiveClass(numArr);
   }
 
