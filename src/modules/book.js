@@ -1,7 +1,9 @@
 let bookBlock = "",
   classRating = "",
   classDescription = "",
-  classCart = "";
+  classCart = "",
+  btnName = "",
+  starFill = [];
 
 const book = (
   id,
@@ -26,7 +28,11 @@ const book = (
   }
 
   if (averageRating && ratingsCount) {
-    console.log(ratingsCount);
+    for (let i = 0; i < 5; i++) {
+      if (i <= Math.round(averageRating)) {
+        starFill[i] = "#F2C94C";
+      } else starFill[i] = "#EEEDF5";
+    }
     classRating = "";
   } else {
     classRating = "none";
@@ -50,11 +56,15 @@ const book = (
 
   if (cart === true) {
     classCart = "book__button-cart";
-  } else classCart = "";
+    btnName = "in the cart";
+  } else {
+    classCart = "";
+    btnName = "buy now";
+  }
 
   bookBlock = `<div class="book" data-id=${id}>
   <div class="book__img">
-    <img src=${img} alt="">
+    <img src=${img} alt="book image">
   </div>
   <div class="book__info">
     <div class="book__autor">${author}</div>
@@ -62,26 +72,26 @@ const book = (
     <div class="book__rating ${classRating}">
       <div class="book__rating-stars">
         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="${starFill[0]}"/>
         </svg>
         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="${starFill[1]}"/>
         </svg>
         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="${starFill[2]}"/>
         </svg>
         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="${starFill[3]}"/>
         </svg>
         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="#EEEDF5"/>
+        <path d="M6 0L7.80568 3.5147L11.7063 4.1459L8.92165 6.9493L9.52671 10.8541L6 9.072L2.47329 10.8541L3.07835 6.9493L0.293661 4.1459L4.19432 3.5147L6 0Z" fill="${starFill[4]}"/>
         </svg>
       </div> 
       <div class="book__rating-number">${ratingsCount} review</div> 
     </div>
     <p class="book__subtitle ${classDescription}">${description}</p>
     <div class="book__price">${price}</div>
-    <button class="book__button btn ${classCart}">buy now</button>
+    <button class="book__button btn ${classCart}">${btnName}</button>
   </div>
 </div>`;
 };
