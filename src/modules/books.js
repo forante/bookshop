@@ -4,7 +4,17 @@ let loadedBooks = "";
 
 const books = (items) => {
   items.forEach((item) => {
-    book(item.img, item.authors, item.title, item.description, item.price);
+    book(
+      item.id,
+      item.img,
+      item.authors,
+      item.title,
+      item.averageRating,
+      item.ratingsCount,
+      item.description,
+      item.price,
+      item.cart
+    );
     loadedBooks += bookBlock;
   });
 };

@@ -55,6 +55,30 @@
     .iconsbar {
       display: flex;
       gap: 40px;
+
+      &__cart {
+        position: relative;
+
+        &-count{
+          position: absolute;
+          width: 13px;
+          height: 13px;
+          border-radius: 100%;
+          background-color: #FF353A;
+          right: -4px;
+          bottom: -2px;
+          color: white;
+          font-weight: 500;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          display: none;
+
+          &.active {
+            display: flex;
+          }
+        }
+      }
     }
   }
 }
